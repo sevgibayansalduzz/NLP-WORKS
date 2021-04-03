@@ -1,0 +1,38 @@
+### turkish.foma ###
+
+# Vowels
+define V [ b | c | d | f | g | ğ | h | j | l | m | n | r | s | ş | v | y | z ];
+
+define A [a | ı];
+define E [e | i];
+define U [o | u];
+define O [ö | ü];
+
+read lexc turkish.lexc
+define Lexicon;
+
+
+# BCDGReplacement: p,ç,t,k harfleri b,c,d,g harflerine dönüştürülür,Ayrıca gerekli i dönüşümü eklenir.
+define BCDGReplacement  p ->{bı}, ç->{cı}, t->{dı}, k->{ğı} ||  A_"^" i    ,,
+			p ->{bi}, ç->{ci}, t->{di}, k->{ği} ||  E_"^" i    ,,
+			p ->{bu}, ç->{cu}, t->{dü}, k->{ğu} ||  U_"^" i    ,,
+			p ->{bü}, ç->{cü}, t->{dü}, k->{ğü} ||  O_"^" i    ,,
+			[..] ->ı  ||  A V _"^" i	,,
+			[..] ->i  ||  E V _"^" i	,,
+			[..] ->u  ||  U V _"^" i	,,
+			[..] ->ü  ||  O V _"^" i;
+#IDeletion: sondaki fazla i silinir.
+define IDeletion          i->0 || _.#.;
+
+# Cleanup: remove morpheme boundaries
+define Cleanup "^" -> 0;
+
+read lexc turkish.lexc
+define Lexicon
+
+define Grammar  Lexicon           .o.
+        	BCDGReplacement      .o.
+		IDeletion	.o.
+               Cleanup;
+
+regex Grammar;

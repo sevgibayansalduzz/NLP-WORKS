@@ -1,0 +1,57 @@
+﻿!!!turkish.lexc!!!
+
+Multichar_Symbols +N +Acc
+
+LEXICON Root
+
+Noun ;
+
+LEXICON Noun
+
+kitap   Ninf;
+kağıt  Ninf;
+ağaç   Ninf;
+pabuç Ninf;
+kap   Ninf;
+kütük Ninf;
+köpek Ninf;
+dolap Ninf;
+çocuk Ninf;
+senet Ninf;
+tüfek Ninf;
+piliç Ninf;
+hesap Ninf;
+bebek Ninf;
+ilaç Ninf;
+çubuk Ninf;
+bayrak Ninf;
+balık Ninf;
+kilit Ninf;
+mezhep Ninf;
+
+kalem Ninf;
+defter Ninf;
+ses Ninf;
+telefon Ninf;
+televizyon Ninf;
+bilgisayar Ninf;
+okul Ninf;
+sınıf Ninf;
+köy Ninf;
+tüy Ninf;
+komodin Ninf;
+fermuar Ninf;
+demir Ninf;
+ses Ninf;
+ev Ninf;
+zil Ninf;
+gırgır Ninf;
+çarşaf Ninf;
+kaplan Ninf;
+pantolon Ninf;
+
+
+LEXICON Ninf
+
++N:0   #;
++N+Acc:^i  #;
