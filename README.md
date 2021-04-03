@@ -1,4 +1,5 @@
 This repo includes following NLP projects :
+
 -A simple FST that handles one Turkish morphological rule:
 The Word Root mutates:
 Words ending in -P -Ç -T -K change to -B -C -D -Ğ when suffixed with a vowel:
